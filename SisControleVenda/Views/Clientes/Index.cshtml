@@ -1,0 +1,85 @@
+﻿@model IEnumerable<SisControleVenda.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">
+        <button type="button" class="btn btn-primary">
+            <i class="bi bi-plus"></i>
+            Create New
+        </button>
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NivelDeAcessoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteSobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteCPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteDtNasc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelDeAcessoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteSobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteDtNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.ClienteID" class="btn btn-primary btn-sn">
+                        <i class="bi bi-pencil-fill"></i>
+                        Edit
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.ClienteID" class="btn btn-secondary btn-sn">
+                        <i class="bi bi-card-list"></i>
+                        Details
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.ClienteID" class="btn btn-danger btn-sn">
+                        <i class="bi bi-trash3-fill"></i>
+                        Delete
+                    </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

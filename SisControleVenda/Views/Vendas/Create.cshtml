@@ -1,0 +1,68 @@
+﻿@model SisControleVenda.Models.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Venda</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="ClienteID" class="control-label"></label>
+                        <input asp-for="ClienteID" class="form-control" />
+                        <span asp-validation-for="ClienteID" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="FuncionarioID" class="control-label"></label>
+                        <input asp-for="FuncionarioID" class="form-control" />
+                        <span asp-validation-for="FuncionarioID" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="DataHora" class="control-label"></label>
+                        <input asp-for="DataHora" class="form-control" />
+                        <span asp-validation-for="DataHora" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="ProdutoID" class="control-label"></label>
+                        <input asp-for="ProdutoID" class="form-control" />
+                        <span asp-validation-for="ProdutoID" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="ValorTotal" class="control-label"></label>
+                        <input asp-for="ValorTotal" class="form-control" />
+                        <span asp-validation-for="ValorTotal" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="Status" class="control-label"></label>
+                        <input asp-for="Status" class="form-control" />
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

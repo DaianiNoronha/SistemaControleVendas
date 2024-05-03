@@ -1,0 +1,68 @@
+﻿@model SisControleVenda.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Produto</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="NomeLivro" class="control-label"></label>
+                        <input asp-for="NomeLivro" class="form-control" />
+                        <span asp-validation-for="NomeLivro" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="Genero" class="control-label"></label>
+                        <input asp-for="Genero" class="form-control" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="NomeAutor" class="control-label"></label>
+                        <input asp-for="NomeAutor" class="form-control" />
+                        <span asp-validation-for="NomeAutor" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="AnoPublic" class="control-label"></label>
+                        <input asp-for="AnoPublic" class="form-control" />
+                        <span asp-validation-for="AnoPublic" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label asp-for="Preco" class="control-label"></label>
+                        <input asp-for="Preco" class="form-control" />
+                        <span asp-validation-for="Preco" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label asp-for="QauntidadeEmEstoque" class="control-label"></label>
+                        <input asp-for="QauntidadeEmEstoque" class="form-control" />
+                        <span asp-validation-for="QauntidadeEmEstoque" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
